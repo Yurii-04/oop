@@ -11,18 +11,15 @@ import { ConsoleLogger, FileLogger } from './logger';
   const creditCardProcessor = new CreditCardProcessor();
   const consoleLogger = new ConsoleLogger();
 
-  // DIP
-  const order1 = new Order(items, creditCardProcessor, consoleLogger);
+  const order1 = new Order(items, creditCardProcessor, consoleLogger); // DI
   order1.processOrder();
 
-  // LSP
   const payPalProcessor = new PayPalProcessor();
   const fileLogger = new FileLogger();
-  const order2 = new Order(items, payPalProcessor, fileLogger);
+  const order2 = new Order(items, payPalProcessor, fileLogger); // DI
   order2.processOrder();
 
-  // LSP
   const cryptoProcessor = new CryptoProcessor();
-  const order3 = new Order(items, cryptoProcessor, consoleLogger);
+  const order3 = new Order(items, cryptoProcessor, consoleLogger); // DI
   order3.processOrder();
 })();

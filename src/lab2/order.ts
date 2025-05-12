@@ -8,8 +8,8 @@ export type OrderItem = {
 export default class Order {
   constructor(
     private items: OrderItem[],
-    private paymentProcessor: IPaymentProcessor, // DIP
-    private logger: ILogger, // DIP
+    private paymentProcessor: IPaymentProcessor, // LSP
+    private logger: ILogger, // LSP
   ) {}
 
   getTotalPrice(): number {
@@ -20,7 +20,6 @@ export default class Order {
     const total = this.getTotalPrice();
     this.logger.log(`Starting order processing for total: $${total}`);
 
-    // LSP
     const paymentSuccess = this.paymentProcessor.processPayment(total);
 
     if (paymentSuccess) {

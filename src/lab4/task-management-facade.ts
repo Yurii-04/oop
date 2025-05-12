@@ -98,6 +98,7 @@ export default class TaskManagementFacade {
       }
     });
 
+    // tasks that are not included in any group
     const topLevelTasks = Array.from(this.tasks.values()).filter((task) => !tasksInGroups.has(task.id));
 
     if (topLevelTasks.length === 0) {

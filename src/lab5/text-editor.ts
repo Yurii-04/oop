@@ -25,8 +25,7 @@ export default class TextEditor {
 
   setState(state: IEditorState): void {
     this._state = state;
-    const stateName = this._state.constructor.name;
-    console.log(`Стан редактора змінено на: ${stateName}`);
+    console.log(`Стан редактора змінено на: ${this._state.constructor.name}`);
   }
 
   enterText(text: string): void {

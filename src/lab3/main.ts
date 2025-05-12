@@ -61,3 +61,5 @@ export class Product implements IPrototype {
   console.log('Original Product (unchanged):');
   console.log(originalLaptop.getDetails());
 })();
+
+// створювати нові об’єкти шляхом копіювання існуючих (прототипів), а не через пряме створення через конструктори.
