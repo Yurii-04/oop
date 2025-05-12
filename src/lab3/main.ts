@@ -8,7 +8,7 @@ type Specs = {
   storage: string;
 };
 
-class Product implements IPrototype {
+export class Product implements IPrototype {
   constructor(
     private name: string,
     private price: number,
